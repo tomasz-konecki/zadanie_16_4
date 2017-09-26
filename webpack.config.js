@@ -1,18 +1,16 @@
 module.exports = {
-    entry: './src/containers/App.js',
-        output: {
+    entry: './src/index.js',
+    output: {
         path:__dirname + '/build',
         filename: 'app.bundle.js'
-    }
-}
-
+    },
 
     module: {
         rules: [
             {
                 test: /\.js$/,
                 loader: "babel-loader",
-                exclude: /\node_modules/
+                exclude: __dirname + '/node_modules'
             },
             {
                 test: /\.css$/,
@@ -29,4 +27,5 @@ module.exports = {
                 ]
             }
         ]
-    };
+    }
+}

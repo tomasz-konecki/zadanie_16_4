@@ -9,25 +9,27 @@ class App extends React.Component {
             data: []
         };
     }
-
     addTodo(val) {
         const todo = {
             text: val,
             id: uuid.v4(),
         };
         const data = [...this.state.data, todo];
-        this.setState({data});
+        this.setState({
+            data
+        });
     }
-
     removeTodo(id) {
         const remainder = this.state.data.filter(todo => todo.id !== id);
-        this.setState({data: remainder});
+        this.setState({
+            data: remainder
+        });
     }
 
     render() {
         return (
             <div className={style.TodoApp}>
-                Tutaj pojawią się komponenty naszej aplikacji.
+                Tutaj pojawia sia komponenty naszej aplikacji.
             </div>
         );
     }
