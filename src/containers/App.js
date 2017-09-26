@@ -1,12 +1,27 @@
 import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
+import Title from '../components/Title';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [
+                {
+                    text: 'Do something 1',
+                    id: 1234
+                },
+                {
+                    text: 'Do something 2',
+                    id: 5678
+                },
+                {
+                    text: 'Do something 3',
+                    id: 9876
+                }
+
+            ],
         };
     }
     addTodo(val) {
@@ -29,7 +44,7 @@ class App extends React.Component {
     render() {
         return (
             <div className={style.TodoApp}>
-                Tutaj pojawia sia komponenty naszej aplikacji.
+                <Title />
             </div>
         );
     }
