@@ -42,9 +42,19 @@ class App extends React.Component {
     }
 
     render() {
+        const list = this.state.data.map((item) => {
+            return (
+                <li key={item.id}>
+                    <p>{item.text}</p>
+                </li>
+            )
+        });
+
         return (
             <div className={style.TodoApp}>
-                <Title />
+                <Title title="APPLICATION 'TODO'"/>
+                <ul>{list}</ul>
+                <p>Number of tasks: {list.length}</p>
             </div>
         );
     }
